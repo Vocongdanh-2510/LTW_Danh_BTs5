@@ -2,7 +2,9 @@
   <configuration default="false" name="Application" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="vn.iotstar.Application" />
     <module name="24110010_LTW_springtool" />
-    <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    <option name="INCLUDE_PROVIDED_SCOPE" value="true" />
+    <option name="SHORTEN_COMMAND_LINE" value="ARGS_FILE" />
     <method v="2">
       <option name="Make" enabled="true" />
     </method>
