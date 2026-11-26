@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Spring Boot App" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <module name="24110010_LTW_springtool" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="vn.iotstar.Application" />
+    <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

@@ -3,10 +3,12 @@ package vn.iotstar;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.boot.web.server.WebServerFactoryCustomizer;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.event.EventListener;
 
 import java.io.File;
 
@@ -35,15 +37,32 @@ public class Application extends SpringBootServletInitializer {
         };
     }
 
-    public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
-        System.out.println("==================================================================");
+    /**
+     * Tự động bật trình duyệt ngay khi ứng dụng khởi động xong thành công trong IntelliJ IDEA.
+     */
+    @EventListener(ApplicationReadyEvent.class)
+    public void openBrowserOnStartup() {
+        String url = "http://localhost:8080/";
+        System.out.println("\n==================================================================");
         System.out.println(">>> ỨNG DỤNG SPRING BOOT BÀI TẬP 05 ĐÃ KHỞI CHẠY THÀNH CÔNG! <<<");
+        System.out.println("🌐 Đang tự động mở trình duyệt tới: " + url);
         System.out.println("👉 Trang chủ:               http://localhost:8080/");
         System.out.println("👉 Đăng nhập:               http://localhost:8080/login");
         System.out.println("👉 Đăng ký:                 http://localhost:8080/register");
         System.out.println("👉 Quản lý Category (Admin): http://localhost:8080/admin/categories");
         System.out.println("👉 Quản lý User (Admin):     http://localhost:8080/admin/users");
-        System.out.println("==================================================================");
+        System.out.println("==================================================================\n");
+
+        try {
+            // Tự động mở trình duyệt mặc định trên Windows
+            new ProcessBuilder("cmd", "/c", "start", url).start();
+        } catch (Exception e) {
+            System.err.println("Không thể tự động mở trình duyệt: " + e.getMessage());
+        }
+    }
+
+    public static void main(String[] args) {
+        System.setProperty("java.awt.headless", "false");
+        SpringApplication.run(Application.class, args);
     }
 }
