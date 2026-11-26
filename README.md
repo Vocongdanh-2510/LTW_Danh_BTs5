@@ -17,7 +17,7 @@
 | **3** | **Đăng ký, Đăng nhập, Đăng xuất** | **ĐÃ HOÀN THÀNH 100%** | `/register`: Đăng ký tài khoản mới, kiểm tra trùng lặp, mã hóa mật khẩu SHA-256;<br>`/login`: Đăng nhập, cookie ghi nhớ, phân quyền chuyển hướng Admin/User;<br>`/logout`: Hủy Session, xóa Cookie. |
 | **4** | **CRUD Role Admin cho bảng Category và User** | **ĐÃ HOÀN THÀNH 100%** | `/admin/categories`: Thêm mới, Sửa, Xóa danh mục, hỗ trợ upload ảnh hoặc URL, phân trang & tìm kiếm.<br>`/admin/users`: Thêm, Sửa, Xóa người dùng, đổi quyền Admin/User, khóa/kích hoạt, phân trang & tìm kiếm.<br>Bảo vệ bằng `AdminInterceptor` cho mọi URL `/admin/**`. |
 | **5** | **Tạo Git Repository & Commit lên GitHub** | **ĐÃ HOÀN THÀNH 100%** | Khởi tạo Git repo, cấu hình `.gitignore`, commit đầy đủ source code sạch sẽ. |
-| **6** | **Nộp link GitHub lên Utex LMS** | **SẴN SÀNG NỘP** | Link Repo: `https://github.com/Vocongdanh-2510/24110010_LTW_springtool.git` |
+| **6** | **Nộp link GitHub lên Utex LMS** | **SẴN SÀNG NỘP** | Link Repo: `https://github.com/Vocongdanh-2510/LTW_Danh_BTs5` |
 
 ---
 
