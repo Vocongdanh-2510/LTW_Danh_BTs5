@@ -1,0 +1,68 @@
+package vn.iotstar.entity;
+
+import java.io.Serializable;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+
+@Entity
+@Table(name = "categories")
+public class Category implements Serializable {
+    private static final long serialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "categoryId")
+    private int categoryId;
+
+    @NotBlank(message = "Tên danh mục không được để trống")
+    @Column(name = "categoryname", columnDefinition = "NVARCHAR(255) NOT NULL")
+    private String categoryname;
+
+    @Column(name = "images", columnDefinition = "NVARCHAR(500) NULL")
+    private String images;
+
+    @Column(name = "status")
+    private int status = 1; // 1: Hoạt động, 0: Tạm khóa
+
+    public Category() {
+    }
+
+    public Category(int categoryId, String categoryname, String images, int status) {
+        this.categoryId = categoryId;
+        this.categoryname = categoryname;
+        this.images = images;
+        this.status = status;
+    }
+
+    public int getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    public String getCategoryname() {
+        return categoryname;
+    }
+
+    public void setCategoryname(String categoryname) {
+        this.categoryname = categoryname;
+    }
+
+    public String getImages() {
+        return images;
+    }
+
+    public void setImages(String images) {
+        this.images = images;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+}
