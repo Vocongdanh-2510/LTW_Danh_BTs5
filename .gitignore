@@ -3,29 +3,27 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-
 ### IntelliJ IDEA ###
-.idea
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/usage.statistics.xml
+.idea/shelf/
+out/
 *.iws
 *.iml
 *.ipr
+
+### STS & Eclipse ###
+.apt_generated
+.factorypath
+.springBeans
+.sts4-cache
 
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
 /dist/
 /nbdist/
-/nbactions.xml
-/nb-configuration.xml
-/nblibraries.xml
 
 ### Other ###
 *.log
